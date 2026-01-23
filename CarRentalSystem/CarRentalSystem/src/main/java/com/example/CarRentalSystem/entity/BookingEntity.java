@@ -16,9 +16,9 @@ public class BookingEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long bookingId;
-    private int days;
     private LocalDate startDate;
     private LocalDate endDate;
+    private String status;
 
     private Double totalAmount;
     @ManyToOne

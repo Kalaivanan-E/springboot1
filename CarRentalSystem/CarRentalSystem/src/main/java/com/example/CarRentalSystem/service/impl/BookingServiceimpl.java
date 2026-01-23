@@ -26,20 +26,20 @@ public class BookingServiceimpl implements BookingService {
     @Autowired
     private CustomerRepository customerrepo;
 
-    public BookingDTO rentCar(Long carId, Long customerId, LocalDate startDate, LocalDate endDate){
+    public BookingDTO rentCar(Long carId, Long customerId, LocalDate startDate, LocalDate endDate) {
 
 
         CarEntity car = carrepo.findBycarId(carId);
-        if(!car.getAvailable()){
+        if (!car.getAvailable()) {
             throw new RuntimeException("Car Not found");
         }
 
         CustomerEntity customer = customerrepo.findBycustomerId(customerId);
-        int days = (int) ChronoUnit.DAYS.between(startDate,endDate);
-        if(days<=0){
+        int days = (int) ChronoUnit.DAYS.between(startDate, endDate);
+        if (days <= 0) {
             throw new RuntimeException("Invalid booking dates");
         }
-        double totalamount = days* car.getPricePerDay();
+        double totalamount = days * car.getPricePerDay();
         car.setAvailable(false);
         carrepo.save(car);
         BookingEntity booking = new BookingEntity();
@@ -52,8 +52,8 @@ public class BookingServiceimpl implements BookingService {
         BookingEntity savedbooking = bookingrepo.save(booking);
         return new BookingDTO(
                 savedbooking.getBookingId(),
-                savedbooking.getDays(),
-                savedbooking.getTotalAmount()
+                days,
+                totalamount
         );
     }
-}
+    }
