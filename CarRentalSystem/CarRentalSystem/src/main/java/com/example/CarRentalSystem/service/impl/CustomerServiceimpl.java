@@ -14,6 +14,7 @@ public class CustomerServiceimpl implements CustomerService {
     private CustomerRepository repo;
 
     public CustomerDTO addCustomer(CustomerDTO customerdto){
+
         CustomerEntity cus1 = new CustomerEntity(
                 customerdto.getCustomerId(),
                 customerdto.getName(),

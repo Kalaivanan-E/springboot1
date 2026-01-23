@@ -37,6 +37,7 @@ public class CarController {
     }
     @PostMapping("/addcustomer")
     public ResponseEntity<CustomerDTO>addCustomer(@RequestBody CustomerDTO customerdto){
+
         CustomerDTO add = custservice.addCustomer(customerdto);
         return new ResponseEntity<>(add,HttpStatus.CREATED);
     }
