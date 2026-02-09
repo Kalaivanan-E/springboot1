@@ -1,0 +1,57 @@
+/* Remove default margin */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Center login page */
+  background: linear-gradient(120deg, #2980b9, #6dd5fa);
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Container */
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Button */
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Button Hover */
+.login-container button:hover {
+  background: #1f6391;
+}
