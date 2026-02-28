@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/jobportal")
+@RequestMapping("/api/user")
 public class UserController {
     @Autowired
     private UserService service;
